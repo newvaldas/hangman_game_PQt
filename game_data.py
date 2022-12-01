@@ -5,7 +5,7 @@ class GameData():
     def __init__(self) -> list: 
 
         """
-        initialize GameData by reading dictionary file and add each 
+        initialize gamedata by reading dictionary file and add each 
         word to a list
         """
         with open("dictionary.txt") as word_file:

@@ -37,7 +37,7 @@ class MainWindow:
         self.main_win.show()
         
         
-    def choose_word(self) -> str:
+    def choose_word(self) ->list:
         """
         Gets word from gamedata and creats a list for guessed letters
         """
@@ -127,6 +127,7 @@ class MainWindow:
         self.ui.u_btn.clicked.connect(lambda: self.letter_btn(self.ui.u_btn))
         self.ui.v_btn.clicked.connect(lambda: self.letter_btn(self.ui.v_btn))
         self.ui.w_btn.clicked.connect(lambda: self.letter_btn(self.ui.w_btn))
+        self.ui.x_btn.clicked.connect(lambda: self.letter_btn(self.ui.x_btn))
         self.ui.y_btn.clicked.connect(lambda: self.letter_btn(self.ui.y_btn))
         self.ui.z_btn.clicked.connect(lambda: self.letter_btn(self.ui.z_btn))       
     
@@ -150,8 +151,8 @@ class MainWindow:
         cheks game status
         """
         # get letter
-        guess = button.text().lower() 
-      
+        guess = button.text().lower()
+     
         # disable letter
         button.setEnabled(False)
         
@@ -160,7 +161,7 @@ class MainWindow:
             for index, letter in enumerate(self.word): # add guess to guessed_word
                 if guess == letter:
                     self.guessed_word[index] = guess.upper()
-            self.display_guesses # display guessed_word
+            self.display_guesses() # display guessed_word
             
             if "_" not in self.guessed_word: #check for win
                 self.ui.result_lb.setText("You are Winner!")

@@ -1,9 +1,5 @@
 # Form generated from reading ui file 'hangman.ui'
-#
 # Created by: PyQt6 UI code generator 6.4.0
-#
-
-
 
 from PyQt6 import QtCore, QtGui, QtWidgets
 
